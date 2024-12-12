@@ -15,7 +15,7 @@ const persistUseState = async (crawler: CheerioCrawler) => {
 
 const persistState = async (crawler: CheerioCrawler) => {
     // Sleep 10 seconds to
-    // 1. Overwrite Crawlee's internal persist state, rather than race condition with it
+    // 1. Not race condition with it Crawlee's internal persist state, instead cleanly overwrite it
     // 2. Allow some pending requests to finish, Crawlee doesn't start new ones after event is emitted
     await sleep(10_000);
 
